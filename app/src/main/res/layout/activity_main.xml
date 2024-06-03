@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,13 +7,75 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:title="Compass"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/title"
+        android:id="@+id/toolbar"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginTop="10sp"
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/card1"
+        style="@style/Widget.Material3.CardView.Filled"
+        android:outlineSpotShadowColor="?attr/colorPrimary"
+        android:outlineAmbientShadowColor="?attr/colorPrimary"
+        app:cardElevation="10sp"
+        android:layout_centerHorizontal="true">
+        
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="400sp"
+            android:src="@drawable/compass"
+            android:padding="20sp"
+            android:id="@+id/compassImageView"
+            />
+        
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_below="@+id/card1"
+        android:id="@+id/card2"
+        android:outlineSpotShadowColor="?attr/colorPrimary"
+        android:outlineAmbientShadowColor="?attr/colorPrimary"
+        app:cardElevation="10sp"
+        android:layout_centerHorizontal="true">
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="10sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/cityTV"
+                android:text="New York"
+                android:textColor="?attr/colorPrimary"
+                android:gravity="center_vertical"
+                android:drawableTint="?attr/colorSurfaceInverse"
+                />
+
+        </LinearLayout>
+        
+        
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>
