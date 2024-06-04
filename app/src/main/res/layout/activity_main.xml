@@ -8,72 +8,107 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:title="Compass"
         app:titleCentered="true"
-        app:titleTextAppearance="@style/title"
-        android:id="@+id/toolbar"
-        />
+        app:titleTextAppearance="@style/title" />
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20sp"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:layout_marginTop="10sp"
-        android:layout_below="@+id/toolbar"
         android:id="@+id/card1"
         style="@style/Widget.Material3.CardView.Filled"
-        android:outlineSpotShadowColor="?attr/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="20sp"
         android:outlineAmbientShadowColor="?attr/colorPrimary"
-        app:cardElevation="10sp"
-        android:layout_centerHorizontal="true">
-        
+        android:outlineSpotShadowColor="?attr/colorPrimary"
+        app:cardElevation="10sp">
+
         <ImageView
+            android:id="@+id/compassImageView"
             android:layout_width="match_parent"
             android:layout_height="400sp"
-            android:src="@drawable/compass"
             android:padding="20sp"
-            android:id="@+id/compassImageView"
-            />
-        
+            android:src="@drawable/compass" />
+
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:layout_marginTop="20sp"
         android:layout_below="@+id/card1"
-        android:id="@+id/card2"
-        android:outlineSpotShadowColor="?attr/colorPrimary"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="20sp"
         android:outlineAmbientShadowColor="?attr/colorPrimary"
-        app:cardElevation="10sp"
-        android:layout_centerHorizontal="true">
-        
+        android:outlineSpotShadowColor="?attr/colorPrimary"
+        app:cardElevation="10sp">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:padding="10sp">
 
+        <TextView
+            android:id="@+id/cityTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:drawableStart="@drawable/baseline_location_on_24"
+            android:drawableTint="?attr/colorSurfaceInverse"
+            android:gravity="center_vertical"
+            android:text="New York"
+            android:textColor="?attr/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/headingTV"
+                android:layout_width="0sp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/cityTV"
-                android:text="New York"
-                android:textColor="?attr/colorPrimary"
-                android:gravity="center_vertical"
-                android:drawableTint="?attr/colorSurfaceInverse"
-                />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="040"
+                android:textColor="#E62323"
+                android:textSize="70sp" />
+
+            <LinearLayout
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorSurfaceInverse"
+                    android:textStyle="bold"
+                    android:id="@+id/latitudeTV"
+                    android:text="N"
+                    />
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
-        
-        
+
 
     </com.google.android.material.card.MaterialCardView>
 
